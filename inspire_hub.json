@@ -1,0 +1,70 @@
+
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-03-20T10:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v8.6.0",
+  "resources": [
+    {
+      "_id": "req_get_token",
+      "name": "Get Token",
+      "url": "http://localhost:8000/token",
+      "method": "GET"
+    },
+    {
+      "_id": "req_get_quotes",
+      "name": "Get All Quotes",
+      "url": "http://localhost:8000/quotes",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Bearer {{token}}"
+      }
+    },
+    {
+      "_id": "req_get_quote_details",
+      "name": "Get Quote Details",
+      "url": "http://localhost:8000/quotes/details",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Bearer {{token}}"
+      },
+      "params": {
+        "resource": "https://doi.org/10.1234/example"
+      }
+    },
+    {
+      "_id": "req_create_quote",
+      "name": "Create Quote",
+      "url": "http://localhost:8000/quotes/new_quote",
+      "method": "POST",
+      "headers": {
+        "Authorization": "Bearer {{token}}",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "text": "La vie est belle",
+        "author": "Victor Hugo",
+        "tags": "life, beauty",
+        "source": "Les Misérables"
+      }
+    },
+    {
+      "_id": "req_get_authors",
+      "name": "Get All Authors",
+      "url": "http://localhost:8000/authors",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Bearer {{token}}"
+      }
+    },
+    {
+      "_id": "req_get_day_quote",
+      "name": "Get Quote of the Day",
+      "url": "http://localhost:8000/quotes/dayquote",
+      "method": "GET",
+      "headers": {
+        "Authorization": "Bearer {{token}}"
+      }
+    }
+  ]
+}
